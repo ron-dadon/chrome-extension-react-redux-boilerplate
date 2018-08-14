@@ -1,0 +1,18 @@
+{
+  "presets": [
+    "env",
+    "stage-0",
+    "react"
+  ],
+  "plugins": ["transform-decorators"],
+  "env": {
+    "production": {
+      "plugins": [
+        ["transform-react-remove-prop-types", {
+          "removeImport": true,
+          "ignoreFilenames": ["node_modules"]
+        }]
+      ]
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "version": "0.1.0",
+  "short_name": "cexrrb",
+  "name": "chrome-extension-react-redux-boilerplate",
+  "description": "react and redux boilerplate for chrome extension",
+  "manifest_version": 2,
+  "options_page": "options.html",
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "all_frames": true
+    }
+  ],
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "icons": {
+    "128": "assets/react-redux-logo.png"
+  },
+  "browser_action": {
+    "default_icon": "assets/react-redux-logo.png",
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "webRequest",
+    "webNavigation",
+    "activeTab",
+    "tabs",
+    "storage",
+    "notifications",
+    "contextMenus",
+    "http://*/*",
+    "https://*/*"
+  ]
+}
